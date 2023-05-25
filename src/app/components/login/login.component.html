@@ -1,0 +1,23 @@
+<body>
+    <div class="center">
+        <h1>Đăng Nhập</h1>
+        <form method="post" [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+            <div class="txt_field">
+                <label for="username"></label>
+                <span></span>
+                <input type="text" formControlName="username" id="username" placeholder="Tài khoản" />
+
+            </div>
+            <div class="txt_field">
+                <label for="password"></label>
+                <span></span>
+                <input type="password" formControlName="password" id="password" placeholder="Mật khẩu" />
+            </div>
+            <div class="pass">Quên mật khẩu?</div>
+            <input type="submit" value="Login">
+            <div class="signup_link">
+                Chưa có tài khoản? <a routerLink="/register">Đăng kí</a>
+            </div>
+        </form>
+    </div>
+</body>

@@ -1,0 +1,35 @@
+<div class="d-flex justify-content-center">
+    <div class="col-md-6">
+        <div class="omtatca">
+            <form action="" method="POST" [formGroup]="create" (ngSubmit)="oncreate()">
+                <legend style="text-align: center;">ĐANG THÊM MỚI 1 SẢN PHẨM</legend>
+                <div class="form-group">
+                    <label for="">Tên sản phẩm</label>
+                    <input type="text" class="form-control" formControlName="name" placeholder="Nhập vào tên của sản phẩm">
+                    <div *ngIf="create.get('name')?.hasError('required')">(Bắt buộc)Không được để trống.</div>
+                </div>
+        
+                <div class="form-group">
+                    <label for="">lik anh</label>
+                    <input type="text" class="form-control" formControlName="link" placeholder="đưa link ảnh vào đây">
+                </div>
+        
+                <div class="form-group">
+                    <label for="">Mô tả</label>
+                    <input type="text" class="form-control" formControlName="des" placeholder="Mô tả sản phẩm">
+                </div>
+                
+                <div class="form-group">
+                    <label for="">Giá sản phẩm</label>
+                    <input type="number" class="form-control" formControlName="price" placeholder="nhập vào giá của sản phẩm(number)">
+                </div>
+                <div class="form-group">
+                    <label for="">Giá đang giảm</label>
+                    <input type="number" class="form-control" formControlName="pricesale" placeholder="giảm giá(number)">
+                </div>
+                <button type="submit" class="btn btn-primary1">xac nhan them</button>
+                <button class="btn btn-primary1" routerLink="/admin/product-list">Trở về</button>
+            </form>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,25 @@
+<div id="portfolio">
+    <div class="container-fluid p-0">
+        <div class="row g-0">
+            <div class="col-lg-4 col-sm-6"
+                *ngFor="let xoa of items | paginate: { itemsPerPage: pageSize, currentPage: pageNumber, totalItems: total }">
+
+
+                <!-- <div class="col-lg-4 col-sm-6" *ngFor="let xoa of list"> -->
+
+
+                <a class="portfolio-box" routerLink="/product-details/{{xoa.id}}" title="ấn để xem">
+                    <img class="img-fluid" src="{{xoa.link}}" />
+                    <div class="portfolio-box-caption">
+                        <div class="project-category text-white-50">chi tiết </div>
+                        <div class="project-name">Ấn để xem chi tiết</div>
+                    </div>
+                </a>
+            </div>
+        </div>
+        <div class="row">
+            <div class="pagination-container">
+                <pagination-controls (pageChange)="loadPage($event)" previousLabel="Trang trước"
+                    nextLabel="Trang sau"></pagination-controls>
+            </div>
+        </div>

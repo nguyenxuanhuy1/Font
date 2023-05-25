@@ -1,0 +1,39 @@
+<div class="omtatca">
+    <table class="table table-bordered table-hover">
+        <thead>
+            <tr>
+                <td>ID</td>
+                <td>Tên</td>
+                <td>Giá Sale</td>
+                <td>Ảnh</td>
+                <td>Số Lượng</td>
+                <td>Thành tiền</td>
+
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let cart of gioh; let i = index">
+                <td>{{i+1}}</td>
+                <td>{{cart.name}}</td>
+                <td>{{cart.pricesale}}</td>
+                <td>{{cart.link}}</td>
+                <td>
+                    <input (change)="updateq(i,$event)" type="number" [value]="cart.quantity"
+                        style="width: 50px; text-align: center;">
+                </td>
+                <td>{{total(cart)}}</td>
+                <td><button class="btn-sm btn-danger" (click)="removecaet(i)">Bỏ mua</button></td>
+            </tr>
+        </tbody>
+    </table>
+    <div style="text-align: center;">
+        <h3>Tổng sản phẩm: {{totalsanpham}}</h3>
+        <h2>Cái giá phải trả: {{totalprice}}</h2>
+        <button class="btn-back"><a href="#portfolio" class="a" style="margin-right: 10px;text-decoration: none; ">Tiếp
+                tục mua hàng</a></button>
+    </div>
+    <div class="image-container1">
+        <img src="../assets/MOMO.jpg" alt="MOMO SDT:039.456.66.22" class="product-image1">
+    </div>
+
+</div>

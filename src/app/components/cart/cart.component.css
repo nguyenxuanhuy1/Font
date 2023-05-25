@@ -1,0 +1,28 @@
+a {
+    color: #333;
+    text-decoration: none;
+    position: relative;
+    transition: color 0.2s ease-in-out;
+  }
+  
+  a::before {
+    content: "";
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 0%;
+    height: 2px;
+    background-color: #f44336;
+    transition: width 0.2s ease-in-out;
+  }
+  
+  a:hover::before {
+    width: 100%;
+  }
+  .btn-back{
+    height: 50px;
+    width: 190px;
+    border-radius: 10px;
+    background-color: rgb(137, 198, 252);
+  }
+  

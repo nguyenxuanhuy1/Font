@@ -1,0 +1,25 @@
+<body>
+    <div class="center">
+        <h1>Đăng kí</h1>
+        <form method="post" [formGroup]="register" (ngSubmit)="onregister()">
+            <div class="txt_field">
+                <label for="username"></label>
+                <span></span>
+                <input type="text" formControlName="username" id="username" placeholder="Tài khoản" />
+
+            </div>
+            <div class="txt_field">
+                <label for="password"></label>
+                <span></span>
+                <input type="password" formControlName="password" id="password" placeholder="Mật khẩu" />
+            </div>
+            <div class="txt_field">
+                <label for="password"></label>
+                <span></span>
+                <input type="number" formControlName="phonenumber" id="phone" placeholder="Số điện thoại" />
+            </div>
+            <input type="submit">
+            <div class="signup_link"></div>
+        </form>
+    </div>
+</body>

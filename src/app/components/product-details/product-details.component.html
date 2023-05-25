@@ -1,0 +1,17 @@
+<div class="omtatca">
+  <div class="row">
+    <div class="col-md-5 product-image">
+      <img *ngIf="product && product.link" [src]="product.link" class="sizea">
+    </div>
+    <div class="col-md-7 product-info">
+      <h1 class="product-name" *ngIf="product">{{product.name}}</h1>
+      <h3 class="product-price" *ngIf="product">GIÁ: <s> {{product.price}}</s> giảm còn <b>{{product.pricesale}}</b>
+      </h3>
+      <p class="product-description" *ngIf="product">{{product.des}}</p>
+      <form action="" method="post " [formGroup]="cartform">
+        <button type="submit" (click)="addtocart(product)" class="button">Thêm vào giỏ </button>
+        <button routerLink="/cart">Đi đến giỏ hàng</button>
+      </form>
+    </div>
+  </div>
+</div>

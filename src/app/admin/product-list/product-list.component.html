@@ -1,0 +1,52 @@
+<div class="omtatca">
+    <div class="table-hover">
+        <form method="POST" [formGroup]="searchForm" (ngSubmit)="onseach()">
+            <div class="form-group">
+                <button class="btn-them" routerLink="/admin/product-create">Thêm mới sản phẩm</button>
+                <input formControlName="name" type="email" placeholder="Bạn muốn tìm gì?">
+                <button type="submit">search</button>
+            </div>
+        </form>
+
+        <table>
+            <thead>
+                <tr>
+                    <th class="center">ID</th>
+                    <th class="center">Tên</th>
+                    <th class="center">Link Ảnh</th>
+                    <th class="center">Mô tả</th>
+                    <th class="center">Ảnh</th>
+                    <th class="center">giá</th>
+                    <th class="center">Giá đang giảm</th>
+                    <th>chức năng</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr
+                    *ngFor="let xoa of items | paginate: { itemsPerPage: pageSize, currentPage: pageNumber, totalItems: total }">
+                    <td class="center">{{xoa.id}}</td>
+                    <td class="center">{{xoa.name}}</td>
+                    <td style="width: 20%" class="center">{{xoa.link}}</td>
+                    <td class="center" style="width: 30%">{{xoa.des}}</td>
+                    <td class="center centerscale"><img src="{{xoa.link}}" alt="" height="60" width="60"></td>
+                    <s><b>
+                            <td class="center">{{xoa.price}}</td>
+                        </b></s>
+                    <td class="center" id="nhapnhay"><b>{{xoa.pricesale}}</b></td>
+                    <td>
+                        <button class="sua" style="margin-right: 3px; border-radius: 20%;"
+                            routerLink="/admin/product-edit/{{xoa.id}}">Sửa</button>
+                        <button class="xoa" style="border-radius: 20%; margin-right: 3px;"
+                            (click)="onDelete(xoa.id)">Xoá</button>
+                    </td>
+                </tr>
+                <td colspan="8">
+                    <div class="pagination-container">
+                        <pagination-controls (pageChange)="loadPage($event)" previousLabel="Trang trước"
+                            nextLabel="Trang sau"></pagination-controls>
+                    </div>
+                </td>
+            </tbody>
+        </table>
+    </div>
+</div>

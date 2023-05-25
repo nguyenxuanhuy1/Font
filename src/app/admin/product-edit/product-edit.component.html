@@ -1,0 +1,31 @@
+<div class="d-flex justify-content-center">
+    <div class="col-md-6">
+      <form action="" method="POST" [formGroup]="productFormEdit" (ngSubmit)="onupdate()" >
+        <legend style="text-align: center;">Bạn đang chỉnh sửa sản phẩm</legend>
+        <div class="form-group">
+            <label for="">Tên sản phẩm</label>
+            <input type="text" class="form-control" formControlName="name" placeholder="Nhập vào tên của sản phẩm">
+        </div>
+        <div class="form-group">
+            <label for="">Mô tả</label>
+            <input type="text" class="form-control" formControlName="des" placeholder="Mô tả ngắn">
+        </div>
+        <div class="form-group">
+            <label for="">Ảnh</label>
+            <input type="text" class="form-control" formControlName="link" placeholder="đưa link ảnh vào đây">
+        </div>
+        <div class="form-group">
+            <label for="">Giá sản phẩm</label>
+            <input type="text" class="form-control" formControlName="price" placeholder="nhập vào giá của sản phẩm">
+        </div>
+        <div class="form-group">
+            <label for="">Giảm giá</label>
+            <input type="text" class="form-control" formControlName="pricesale" placeholder="Giá đang giảm">
+        </div>
+        
+        <button type="submit" class="btn btn-primary1">Xác nhận sửa</button>
+        <button class="btn btn-primary1" routerLink="/admin/product-list">Trở về</button>
+      </form>
+    </div>
+  </div>
+  
